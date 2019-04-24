@@ -16,13 +16,9 @@ body {
     padding-right: 15px;
 }
 
+/* make font for item type selection and search input white so text is visible against white background */
 select, input {
     color: black;
-}
-
-/* QR code generator */
-#qrCode {
-    margin: 15px;
 }
 
 /* Hide/rearrange for smaller screens */
