@@ -1,0 +1,59 @@
+﻿@page
+@model RoR2Logbook.Pages.Items.IndexModel
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+<h2>Items</h2>
+
+<p>
+    <a asp-page="Create">Add New Item</a>
+</p>
+
+<form>
+    <p>
+        Search 
+        <select asp-for="ItemType" asp-items="Model.Types">
+            <option value="">All</option>
+        </select>
+        <input type="text" asp-for="Search" />
+        <input type="submit" value="🔍" />
+        
+    </p>
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Item[0].Description)
+            </th>
+
+            <th></th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Item) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
