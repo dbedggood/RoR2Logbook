@@ -33,6 +33,10 @@ namespace RoR2Logbook
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMvc().AddRazorPagesOptions(options =>
+            {
+                options.Conventions.AddPageRoute("/Items/Index", "/");
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -53,6 +57,7 @@ namespace RoR2Logbook
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
