@@ -12,16 +12,18 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Survivor.Icon)
+        </dt>
+        <dd>
+            <div class="survivor itembg">
+                <img class="icon" src=@Url.Content(Model.Survivor.Icon) />
+            </div>
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Survivor.Name)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Survivor.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Survivor.Icon)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Survivor.Icon)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Survivor.BaseMaxHealth)
@@ -62,6 +64,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Survivor.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="./Edit" asp-route-id="@Model.Survivor.ID" class="btn btn-warning">Edit</a>
+    <a asp-page="./Index" class="btn btn-info">Back</a>
 </div>

@@ -13,16 +13,18 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.Survivor.Icon)
+        </dt>
+        <dd>
+            <div class="survivor itembg">
+                <img class="icon" src=@Url.Content(Model.Survivor.Icon) />
+            </div>
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Survivor.Name)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Survivor.Name)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Survivor.Icon)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Survivor.Icon)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Survivor.BaseMaxHealth)
@@ -64,7 +66,7 @@
     
     <form method="post">
         <input type="hidden" asp-for="Survivor.ID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-info">Back</a>
     </form>
 </div>
