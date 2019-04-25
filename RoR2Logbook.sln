@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoR2Logbook", "RoR2Logbook\RoR2Logbook.csproj", "{C1BA448B-F552-4413-94B2-8A92C4552DB1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoR2LogbookMVC", "RoR2LogbookMVC\RoR2LogbookMVC.csproj", "{DBE423E8-C162-43C8-B168-5C714FC4A4A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1BA448B-F552-4413-94B2-8A92C4552DB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1BA448B-F552-4413-94B2-8A92C4552DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1BA448B-F552-4413-94B2-8A92C4552DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1BA448B-F552-4413-94B2-8A92C4552DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE423E8-C162-43C8-B168-5C714FC4A4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE423E8-C162-43C8-B168-5C714FC4A4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE423E8-C162-43C8-B168-5C714FC4A4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE423E8-C162-43C8-B168-5C714FC4A4A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
