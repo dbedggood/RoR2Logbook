@@ -17,5 +17,7 @@ namespace RoR2Logbook.Models
         public DbSet<RoR2Logbook.Models.Item> Item { get; set; }
 
         public DbSet<RoR2Logbook.Models.Survivor> Survivor { get; set; }
+        public DbSet<RoR2Logbook.Models.ItemComment> ItemComment { get; set; }
+        public DbSet<RoR2Logbook.Models.SurvivorComment> SurvivorComment { get; set; }
     }
 }
