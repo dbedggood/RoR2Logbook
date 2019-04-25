@@ -3,6 +3,9 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url('../images/background.png');
+    background-attachment: fixed;
+    color: white;
 }
 
 /* Wrapping element */
@@ -12,26 +15,46 @@ body {
     padding-right: 15px;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+.icon {
+    height: 80px;
+    width: 80px;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.itembg {
+    background-size: 80px 80px;
+    background-repeat: no-repeat;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+.tier1 {
+    background-image: url('../images/Tier1BG.png');
+}
+
+.tier2 {
+    background-image: url('../images/Tier2BG.png');
+}
+
+.tier3 {
+    background-image: url('../images/Tier3BG.png');
+}
+
+.equipment {
+    background-image: url('../images/EquipmentBG.png');
+}
+
+.lunar {
+    background-image: url('../images/LunarBG.png');
+}
+
+.boss {
+    background-image: url('../images/BossBG.png');
+}
+
+/* make font for item type selection and search input black so text is visible against white background */
+select, input {
+    color: black;
 }
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+ 
 }
