@@ -12,5 +12,7 @@ namespace RoR2Logbook.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
+        public string Notes { get; set; }
+        public string Icon { get; set; }
     }
 }

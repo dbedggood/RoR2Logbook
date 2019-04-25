@@ -23,23 +23,29 @@ namespace RoR2Logbook.Models
                 context.Item.AddRange(
                     new Item
                     {
+                        Icon = "~/images/tier1/Syringe.png",
                         Name = "Soldier's Syringe",
                         Description = "Increases attack speed by 15% (+15% per stack).",
-                        Type = "tier1"
+                        Type = "tier1",
+                        Notes = "make you go fast zoom zoom haha lol"
                     },
 
                     new Item
                     {
+                        Icon = "../images/lunar/LunarDagger.png",
                         Name = "Shaped Glass",
                         Description = "Increase base damage by 100% (+100% per stack). Reduce maximum health by 50% (+50% per stack).",
-                        Type = "lunar"
+                        Type = "lunar",
+                        Notes = "make you do big damage but sometimes you die"
                     },
 
                     new Item
                     {
+                        Icon = "../images/equipment/Scanner.png",
                         Name = "Radar Scanner",
                         Description = "Reveal all interactables within 500m for 10 seconds.",
-                        Type = "equipment"
+                        Type = "equipment",
+                        Notes = "make you find loot good"
                     }
                 );
                 context.SaveChanges();
