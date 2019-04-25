@@ -1,0 +1,82 @@
+﻿@page
+@model RoR2Logbook.Pages.Survivors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Add New Survivor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].Icon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].BaseMaxHealth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].MaxHealthIncrease)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].BaseDamage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].DamageIncrease)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].Speed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Survivor[0].Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Survivor) {
+        <tr>
+            <td>
+                <div class="survivor itembg">
+                    <img class="icon" src=@item.Icon />
+                </div>
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.BaseMaxHealth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxHealthIncrease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaseDamage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DamageIncrease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-info">Details</a>
+                <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-warning">Edit</a>
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

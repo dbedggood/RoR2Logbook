@@ -9,8 +9,8 @@ using RoR2Logbook.Models;
 namespace RoR2Logbook.Migrations
 {
     [DbContext(typeof(RoR2LogbookContext))]
-    [Migration("20190425005017_Notes")]
-    partial class Notes
+    [Migration("20190425031024_Survivor")]
+    partial class Survivor
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,6 +39,33 @@ namespace RoR2Logbook.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Item");
+                });
+
+            modelBuilder.Entity("RoR2Logbook.Models.Survivor", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("BaseDamage");
+
+                    b.Property<float>("BaseMaxHealth");
+
+                    b.Property<float>("DamageIncrease");
+
+                    b.Property<string>("Icon");
+
+                    b.Property<float>("MaxHealthIncrease");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Notes");
+
+                    b.Property<float>("Speed");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Survivor");
                 });
 #pragma warning restore 612, 618
         }

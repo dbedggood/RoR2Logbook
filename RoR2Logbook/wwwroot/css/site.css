@@ -49,6 +49,10 @@ body {
     background-image: url('../images/BossBG.png');
 }
 
+.survivor {
+    background-image: url('../images/SurvivorBG.png');
+}
+
 /* make font for item type selection and search input black so text is visible against white background */
 select, input {
     color: black;

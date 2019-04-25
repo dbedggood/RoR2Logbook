@@ -38,6 +38,33 @@ namespace RoR2Logbook.Migrations
 
                     b.ToTable("Item");
                 });
+
+            modelBuilder.Entity("RoR2Logbook.Models.Survivor", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("BaseDamage");
+
+                    b.Property<float>("BaseMaxHealth");
+
+                    b.Property<float>("DamageIncrease");
+
+                    b.Property<string>("Icon");
+
+                    b.Property<float>("MaxHealthIncrease");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Notes");
+
+                    b.Property<float>("Speed");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Survivor");
+                });
 #pragma warning restore 612, 618
         }
     }
