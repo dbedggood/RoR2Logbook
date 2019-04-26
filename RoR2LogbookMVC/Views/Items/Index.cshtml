@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RoR2LogbookMVC.Models.Item>
+
+@{
+    ViewData["Title"] = "Items";
+}
+
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-light">@ViewData["Title"]</h2>
+        </div>
+        <div class="col-6 align-self-center">
+            <span class="float-right">
+                <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+            </span>
+        </div>
+    </div>
+
+
+<br />
+
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Icon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <div class="@item.Type itembg">
+                    <img class="icon" src=@item.Icon />
+                </div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ID">Details</a>
+                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
