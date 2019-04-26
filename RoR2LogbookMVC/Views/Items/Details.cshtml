@@ -2,6 +2,12 @@
 
 @{
     ViewData["Title"] = "Details";
+    ViewData["tier1"] = "Common Item";
+    ViewData["tier2"] = "Uncommon Item";
+    ViewData["tier3"] = "Legendary Item";
+    ViewData["boss"] = "Boss Item";
+    ViewData["lunar"] = "Lunar Item";
+    ViewData["equipment"] = "Equipment";
 }
 
 <h2 class="text-light">Item Details</h2>
@@ -27,7 +33,7 @@
             @Html.DisplayNameFor(model => model.Type)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Type)
+            @ViewData[Model.Type]
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
