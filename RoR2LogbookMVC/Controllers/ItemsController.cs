@@ -19,9 +19,18 @@ namespace RoR2LogbookMVC.Controllers
         }
 
         // GET: Items
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            return View(await _context.Item.ToListAsync());
+            var items = from i in _context.Item
+                         select i;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                // Select items that contain the search string in their name or description.
+                items = items.Where(s => s.Name.Contains(searchString) || s.Description.Contains(searchString));
+            }
+
+            return View(await items.ToListAsync());
         }
 
         // GET: Items/Details/5
