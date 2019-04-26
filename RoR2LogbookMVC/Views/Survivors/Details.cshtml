@@ -4,17 +4,19 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h2 class="text-light">Survivor Details</h2>
 
 <div>
-    <h4>Survivor</h4>
+
     <hr />
-    <dl class="row">
+    <dl class="row text-light">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+            <div class="survivor itembg">
+                <img class="icon" src=@Model.Icon />
+            </div>
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Icon)

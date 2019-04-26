@@ -1,41 +1,30 @@
 ﻿@model IEnumerable<RoR2LogbookMVC.Models.Survivor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Survivors";
 }
 
-<h1>Index</h1>
+<a class="float-right" asp-action="Create">Create New</a>
+<h2 class="text-light">@ViewData["Title"]</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<br />
+
+<table class="table text-light">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Icon)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BaseMaxHealth)
+                @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MaxHealthIncrease)
+                Health
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.BaseDamage)
+                Damage
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DamageIncrease)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Speed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Notes)
-            </th>
+
             <th></th>
         </tr>
     </thead>
@@ -43,29 +32,23 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                <div class="survivor itembg">
+                    <img class="icon" src=@item.Icon />
+                </div>
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Icon)
+                @Html.DisplayFor(modelItem => item.BaseMaxHealth) HP
+                (+@Html.DisplayFor(modelItem => item.MaxHealthIncrease) per level)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BaseMaxHealth)
+                @Html.DisplayFor(modelItem => item.BaseDamage) Base Damage
+
+                (+@Html.DisplayFor(modelItem => item.DamageIncrease) per level)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaxHealthIncrease)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BaseDamage)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DamageIncrease)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Speed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
