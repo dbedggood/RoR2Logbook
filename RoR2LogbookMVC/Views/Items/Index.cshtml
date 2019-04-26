@@ -21,7 +21,7 @@
 <table class="table text-light">
     <thead>
         <tr>
-            <th>
+            <th style="width: 10%">
                 @Html.DisplayNameFor(model => model.Icon)
             </th>
             <th>
@@ -30,7 +30,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th></th>
+            <th style="width: 25%"></th>
         </tr>
     </thead>
     <tbody>
@@ -47,7 +47,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td>
+            <td class="text-right">
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ID">Details</a>
                 <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
                 <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>

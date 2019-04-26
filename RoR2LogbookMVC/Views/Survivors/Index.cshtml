@@ -20,7 +20,7 @@
 <table class="table text-light">
     <thead>
         <tr>
-            <th>
+            <th style="width: 10%">
                 @Html.DisplayNameFor(model => model.Icon)
             </th>
             <th>
@@ -57,7 +57,7 @@
                 (+@Html.DisplayFor(modelItem => item.DamageIncrease) per level)
             </td>
 
-            <td>
+            <td class="text-right">
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ID">Details</a>
                 <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
                 <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
