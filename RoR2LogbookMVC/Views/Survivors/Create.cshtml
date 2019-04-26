@@ -1,0 +1,65 @@
+﻿@model RoR2LogbookMVC.Models.Survivor
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Survivor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Icon" class="control-label"></label>
+                <input asp-for="Icon" class="form-control" />
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BaseMaxHealth" class="control-label"></label>
+                <input asp-for="BaseMaxHealth" class="form-control" />
+                <span asp-validation-for="BaseMaxHealth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MaxHealthIncrease" class="control-label"></label>
+                <input asp-for="MaxHealthIncrease" class="form-control" />
+                <span asp-validation-for="MaxHealthIncrease" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BaseDamage" class="control-label"></label>
+                <input asp-for="BaseDamage" class="form-control" />
+                <span asp-validation-for="BaseDamage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DamageIncrease" class="control-label"></label>
+                <input asp-for="DamageIncrease" class="form-control" />
+                <span asp-validation-for="DamageIncrease" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Speed" class="control-label"></label>
+                <input asp-for="Speed" class="form-control" />
+                <span asp-validation-for="Speed" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
