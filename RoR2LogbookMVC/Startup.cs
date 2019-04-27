@@ -29,8 +29,18 @@ namespace RoR2LogbookMVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<RoR2LogbookMVCContext>(options =>
+            // Use SQL Database if in Azure, otherwise, use SQLite
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+                services.AddDbContext<RoR2LogbookMVCContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("ror2logbook")));
+            else
+                services.AddDbContext<RoR2LogbookMVCContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("RoR2LogbookMVCContext")));
+
+            // Automatically perform database migration
+            services.BuildServiceProvider().GetService<RoR2LogbookMVCContext>().Database.Migrate();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

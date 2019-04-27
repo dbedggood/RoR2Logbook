@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace RoR2LogbookMVC.Models
 {
+    // Populates database on startup if empty.
     public class Seed
     {
         public static void Initialize(IServiceProvider serviceProvider)
