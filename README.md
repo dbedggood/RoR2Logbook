@@ -6,9 +6,10 @@ An MVC web application made in ASP.NET Core. Created in Visual Studio 2019.
 
 ### TODO
 
-* Fill database with content
+* Format notes field to render new lines
 * Add pickup text field to items
 * Add unlock requirement field to certain items
+* Fill empty fields with relevant information
 * Add monsters model and information
 * Properly design for responsiveness
 
