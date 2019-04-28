@@ -2,3 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+}
