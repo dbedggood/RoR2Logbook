@@ -19,7 +19,7 @@ namespace RoR2LogbookMVC.Controllers
         {
             if (!string.IsNullOrEmpty(userName) && string.IsNullOrEmpty(password))
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Login");
             }
 
             if (userName == "admin" && password == "pass")

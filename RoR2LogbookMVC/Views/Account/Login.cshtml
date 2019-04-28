@@ -6,7 +6,9 @@
 <div class="container">
     <div class="row text-light">
         <div class="col-md-12">
-            <h2 class="text-light">Login</h2>
+            <h2 class="text-light">
+                Hello @User.Identity.Name
+            </h2>
             <form asp-action="Login" method="post">
                 <div class="form-group">
                     <label>Username</label>
