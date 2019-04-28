@@ -24,6 +24,8 @@ namespace RoR2LogbookMVC.Controllers
             var items = from i in _context.Item
                          select i;
 
+            ViewData["CurrentFilter"] = searchString;
+
             if (!String.IsNullOrEmpty(searchString))
             {
                 // Select items that contain the search string in their name or description.
