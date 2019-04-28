@@ -15,7 +15,14 @@
         
         <div class="col-3 align-self-center">
             <span class="float-right">
-                <a class="btn btn-outline-success" asp-action="Create">Create New</a>
+                @if (User.Identity.Name != null)
+                {
+                    <a class="btn btn-outline-success" asp-action="Create">Create</a>
+                }
+                else
+                {
+                    <a class="btn btn-outline-success" asp-controller="Account" asp-action="Login">Login</a>
+                }
             </span>
         </div>
     </div>
@@ -54,8 +61,11 @@
             </td>
             <td class="text-right">
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ID">Details</a>
-                <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
-                <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                @if (User.Identity.Name != null)
+                {
+                    <a class="btn btn-outline-warning" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                }
             </td>
         </tr>
 }
