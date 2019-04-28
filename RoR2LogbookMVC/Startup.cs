@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Rewrite;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.EntityFrameworkCore;
 using RoR2LogbookMVC.Models;
-using Microsoft.AspNetCore.Rewrite;
+using System;
 
 namespace RoR2LogbookMVC
 {
@@ -29,6 +31,14 @@ namespace RoR2LogbookMVC
                 options.Filters.Add(new RequireHttpsAttribute());
             });
 
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.  
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.Strict;
+            });
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Use SQL Database if in Azure, otherwise, use SQLite
@@ -58,8 +68,12 @@ namespace RoR2LogbookMVC
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            app.UseCookiePolicy();
+            app.UseAuthentication();
             app.UseStaticFiles();
+            app.UseHttpsRedirection();
+            var options = new RewriteOptions()
+                  .AddRedirectToHttps();
 
             app.UseMvc(routes =>
             {
@@ -68,8 +82,6 @@ namespace RoR2LogbookMVC
                     template: "{controller=Items}/{action=Index}/{id?}");
             });
 
-            var options = new RewriteOptions()
-                  .AddRedirectToHttps();
         }
     }
 }
