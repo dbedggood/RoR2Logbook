@@ -23,7 +23,7 @@ namespace RoR2LogbookMVC.Controllers
                 return RedirectToAction("Login");
             }
 
-            if (userName == Environment.GetEnvironmentVariable("USERNAME") && password == Environment.GetEnvironmentVariable("SECRET"))
+            if (userName == Environment.GetEnvironmentVariable("NAME") && password == Environment.GetEnvironmentVariable("SECRET"))
             {
 
                 //Create the identity for the user  
