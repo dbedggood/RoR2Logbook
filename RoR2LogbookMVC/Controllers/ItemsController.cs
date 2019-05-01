@@ -20,12 +20,21 @@ namespace RoR2LogbookMVC.Controllers
         }
 
         // GET: Items
-        public async Task<IActionResult> Index(string search)
+        public async Task<IActionResult> Index(string search, string sort)
         {
             var items = from i in _context.Item
                          select i;
 
             ViewData["CurrentFilter"] = search;
+
+            if (sort == "descending")
+            {
+                items = items.OrderByDescending(s => s.Name);
+            }
+            else if (sort == "ascending")
+            {
+                items = items.OrderBy(s => s.Name);
+            }
 
             if (!String.IsNullOrEmpty(search))
             {
