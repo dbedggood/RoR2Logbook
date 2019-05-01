@@ -8,8 +8,12 @@
         <div class="col-9 form-inline">
             <h2 class="text-light" style="margin-right: 10px;">Items:</h2>
             <form asp-controller="Items" asp-action="Index" method="get">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search" value="@ViewData["currentFilter"]">
-                <input class="btn btn-outline-light my-2 my-sm-0" type="submit" value="🔍" />
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="search" value="@ViewData["currentFilter"]">
+                    <div class="input-group-append">
+                        <input class="btn btn-outline-light" type="submit" value="🔍" />
+                    </div>
+                </div>
             </form>
         </div>
         
@@ -30,17 +34,24 @@
 
 <br />
 
-<table class="table text-light">
+<table class="table text-light mb-0">
     <thead>
         <tr>
             <th style="width: 10%">
                 @Html.DisplayNameFor(model => model.Icon)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
+            <th style="width: 20%;">
+                <div class="float-left" style="margin-right: 3px;">
+                    @Html.DisplayNameFor(model => model.Name)
+                </div>
+                <div>
+                    <a style="margin-right: -2px;" asp-action="Index" asp-route-sort="nameAscending" asp-route-search=@ViewData["currentFilter"]><i class="fas fa-caret-up text-white"></i></a>
+                    <a asp-action="Index" asp-route-sort="nameDescending" asp-route-search=@ViewData["currentFilter"]><i class="fas fa-caret-down text-white"></i></a>
+                </div>
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                @Html.DisplayNameFor(model => model.PickupText)
             </th>
             <th style="width: 25%"></th>
         </tr>
@@ -57,7 +68,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.PickupText)
             </td>
             <td class="text-right">
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ID">Details</a>
