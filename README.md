@@ -7,15 +7,11 @@ An MVC web application made in ASP.NET Core. Created in Visual Studio 2019.
 ### TODO
 
 * Format notes field to render new lines
-* Add pickup text field to items
-* Add unlock requirement field to certain items
-* Fill empty fields with relevant information
 * Add monsters model and information
-* Properly design for responsiveness
+* Fix all UI errors on smaller screens
 
 #### Possible Upcoming Features
 
 * Comments system for users to comment on Items and Survivors detail pages
 * Approval system to allow anonymous users to make changes, but only have them show if approved by an admin
 * Calculators/Graphs
-* Ability to upload an icon when editing/creating an Item/Survivor
