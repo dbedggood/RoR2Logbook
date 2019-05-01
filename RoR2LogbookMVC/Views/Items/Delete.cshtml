@@ -17,36 +17,42 @@
 <div>
     <hr />
     <dl class="text-light row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Icon)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             <div class="@Model.Type itembg">
                 <img class="icon" src=@Model.Icon />
             </div>
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Type)
         </dt>
         <dd class="col-sm-10">
             @ViewData[Model.Type]
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PickupText)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PickupText)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Description)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Notes)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Notes)
         </dd>
     </dl>

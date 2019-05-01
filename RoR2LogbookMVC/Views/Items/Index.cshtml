@@ -42,7 +42,7 @@
                 <a asp-action="Index" asp-route-sort="nameDescending" asp-route-search=@ViewData["currentFilter"]><i class="fas fa-caret-down text-white"></i></a>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
+                @Html.DisplayNameFor(model => model.PickupText)
             </th>
             <th style="width: 25%"></th>
         </tr>
@@ -59,7 +59,7 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.PickupText)
             </td>
             <td class="text-right">
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.ID">Details</a>

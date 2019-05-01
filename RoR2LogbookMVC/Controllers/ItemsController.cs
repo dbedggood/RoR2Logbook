@@ -75,7 +75,7 @@ namespace RoR2LogbookMVC.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Icon,Name,Type,Description,Notes")] Item item)
+        public async Task<IActionResult> Create([Bind("ID,Icon,Name,Type,PickupText,Description,Notes")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +108,7 @@ namespace RoR2LogbookMVC.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Icon,Name,Type,Description,Notes")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Icon,Name,Type,PickupText,Description,Notes")] Item item)
         {
             if (id != item.ID)
             {
