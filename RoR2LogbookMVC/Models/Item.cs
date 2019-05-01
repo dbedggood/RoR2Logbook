@@ -15,6 +15,8 @@ namespace RoR2LogbookMVC.Models
         public string PickupText { get; set; }
         [Required]
         public string Description { get; set; }
+        [Display(Name = "Unlock Requirement")]
+        public string Challenge { get; set; }
         public string Notes { get; set; }
     }
 }

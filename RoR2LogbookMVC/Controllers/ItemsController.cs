@@ -45,7 +45,7 @@ namespace RoR2LogbookMVC.Controllers
             return View(await items.ToListAsync());
         }
 
-        // GET: Items/Details/5
+        // GET: Items/Details/{id}
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -70,12 +70,10 @@ namespace RoR2LogbookMVC.Controllers
         }
 
         // POST: Items/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Icon,Name,Type,PickupText,Description,Notes")] Item item)
+        public async Task<IActionResult> Create([Bind("ID,Icon,Name,Type,PickupText,Description,Challenge,Notes")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +84,7 @@ namespace RoR2LogbookMVC.Controllers
             return View(item);
         }
 
-        // GET: Items/Edit/5
+        // GET: Items/Edit/{id}
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -102,13 +100,11 @@ namespace RoR2LogbookMVC.Controllers
             return View(item);
         }
 
-        // POST: Items/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: Items/Edit/{id}
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Icon,Name,Type,PickupText,Description,Notes")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Icon,Name,Type,PickupText,Description,Challenge,Notes")] Item item)
         {
             if (id != item.ID)
             {
@@ -138,7 +134,7 @@ namespace RoR2LogbookMVC.Controllers
             return View(item);
         }
 
-        // GET: Items/Delete/5
+        // GET: Items/Delete/{id}
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -156,7 +152,7 @@ namespace RoR2LogbookMVC.Controllers
             return View(item);
         }
 
-        // POST: Items/Delete/5
+        // POST: Items/Delete/{id}
         [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
