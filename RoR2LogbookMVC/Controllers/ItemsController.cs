@@ -27,11 +27,11 @@ namespace RoR2LogbookMVC.Controllers
 
             ViewData["CurrentFilter"] = search;
 
-            if (sort == "descending")
+            if (sort == "nameDescending")
             {
                 items = items.OrderByDescending(s => s.Name);
             }
-            else if (sort == "ascending")
+            else if (sort == "nameAscending")
             {
                 items = items.OrderBy(s => s.Name);
             }

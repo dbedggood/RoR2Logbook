@@ -38,8 +38,8 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
-                <a asp-action="Index" asp-route-sort="descending" asp-route-search=@ViewData["currentFilter"]>DESC</a>
-                <a asp-action="Index" asp-route-sort="ascending" asp-route-search=@ViewData["currentFilter"]>ASC</a>
+                <a asp-action="Index" asp-route-sort="nameAscending" asp-route-search=@ViewData["currentFilter"]><i class="fas fa-caret-up text-white"></i></a>
+                <a asp-action="Index" asp-route-sort="nameDescending" asp-route-search=@ViewData["currentFilter"]><i class="fas fa-caret-down text-white"></i></a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
