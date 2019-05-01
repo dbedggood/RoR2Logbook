@@ -11,7 +11,7 @@ namespace RoR2LogbookMVC.Models
         public string Name { get; set; }
         [Required]
         public string Type { get; set; }
-        [Display(Name = "Release Date")]
+        [Display(Name = "Pickup Text")]
         public string PickupText { get; set; }
         [Required]
         public string Description { get; set; }
