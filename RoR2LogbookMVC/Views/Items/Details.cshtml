@@ -56,12 +56,11 @@
                 @Html.DisplayFor(model => model.Challenge)
             </dd>
         }
-
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Notes)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Notes)
+            <div style="white-space: pre-wrap;">@Html.DisplayFor(model => model.Notes)</div>
         </dd>
     </dl>
 </div>
