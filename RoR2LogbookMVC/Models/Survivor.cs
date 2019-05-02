@@ -19,6 +19,8 @@ namespace RoR2LogbookMVC.Models
         public float DamageIncrease { get; set; }
         [Required]
         public float Speed { get; set; }
+        [Display(Name = "Unlock")]
+        public string Challenge { get; set; }
         public string Notes { get; set; }
     }
 }

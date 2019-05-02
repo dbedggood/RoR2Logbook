@@ -55,7 +55,7 @@ namespace RoR2LogbookMVC.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Icon,BaseMaxHealth,MaxHealthIncrease,BaseDamage,DamageIncrease,Speed,Notes")] Survivor survivor)
+        public async Task<IActionResult> Create([Bind("ID,Name,Icon,BaseMaxHealth,MaxHealthIncrease,BaseDamage,DamageIncrease,Speed,Challenge,Notes")] Survivor survivor)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace RoR2LogbookMVC.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Icon,BaseMaxHealth,MaxHealthIncrease,BaseDamage,DamageIncrease,Speed,Notes")] Survivor survivor)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Icon,BaseMaxHealth,MaxHealthIncrease,BaseDamage,DamageIncrease,Speed,Challenge,Notes")] Survivor survivor)
         {
             if (id != survivor.ID)
             {

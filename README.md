@@ -6,7 +6,6 @@ An MVC web application made in ASP.NET Core. Created in Visual Studio 2019.
 
 ### TODO
 
-* Format notes field to render new lines
 * Add monsters model and information
 * Fix all UI errors on smaller screens
 
