@@ -47,12 +47,16 @@
         <dd class="col-sm-10 align-self-center">
             @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Challenge)
-        </dt>
-        <dd class="col-sm-10 align-self-center">
-            @Html.DisplayFor(model => model.Challenge)
-        </dd>
+        @if (Model.Challenge != null)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Challenge)
+            </dt>
+            <dd class="col-sm-10 align-self-center">
+                @Html.DisplayFor(model => model.Challenge)
+            </dd>
+        }
+
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Notes)
         </dt>
