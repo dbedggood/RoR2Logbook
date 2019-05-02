@@ -50,7 +50,7 @@ namespace RoR2LogbookMVC
                     options.UseSqlServer(Configuration.GetConnectionString("RoR2LogbookMVCContext")));
 
             // Automatically perform database migration
-            services.BuildServiceProvider().GetService<RoR2LogbookMVCContext>().Database.Migrate();
+            //services.BuildServiceProvider().GetService<RoR2LogbookMVCContext>().Database.Migrate();
 
             
         }
