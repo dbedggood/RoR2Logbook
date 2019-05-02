@@ -66,9 +66,24 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Notes)
         </dt>
-        <dd class="col-sm-10">
-            <div style="white-space: pre-wrap;">@Html.DisplayFor(model => model.Notes)</div>
-        </dd>
+        @if (Model.Notes != null)
+        {
+            <dd class="col-sm-10">
+                <div style="white-space: pre-wrap;">@Html.DisplayFor(model => model.Notes)</div>
+            </dd>
+        }
+        else
+        {
+            <dd class="col-sm-10">
+                <div style="white-space: pre-wrap; color: grey;">Welcome to DataScraper (v3.1.53   beta branch)
+$  Scraping memory... error...
+$  Resolving... error...
+$  Combing for relevant data...
+Error!
+Outputting error log...
+                </div>
+            </dd>
+        }
     </dl>
     
     <form asp-action="Delete">
