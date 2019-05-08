@@ -9,6 +9,7 @@ namespace RoR2LogbookMVC.Models
         public string Icon { get; set; }
         [Required]
         public string Name { get; set; }
+        public int OrderNo { get; set; }
         [Required]
         public string Type { get; set; }
         [Display(Name = "Pickup Text")]
