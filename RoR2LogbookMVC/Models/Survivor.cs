@@ -7,6 +7,7 @@ namespace RoR2LogbookMVC.Models
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
+        public int OrderNo { get; set; }
         [Required]
         public string Icon { get; set; }
         [Required]

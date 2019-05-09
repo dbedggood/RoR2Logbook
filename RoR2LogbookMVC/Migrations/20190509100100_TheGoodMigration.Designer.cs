@@ -9,8 +9,8 @@ using RoR2LogbookMVC.Models;
 namespace RoR2LogbookMVC.Migrations
 {
     [DbContext(typeof(RoR2LogbookMVCContext))]
-    [Migration("20190426024507_Survivor")]
-    partial class Survivor
+    [Migration("20190509100100_TheGoodMigration")]
+    partial class TheGoodMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,15 +26,25 @@ namespace RoR2LogbookMVC.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Challenge");
 
-                    b.Property<string>("Icon");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Icon")
+                        .IsRequired();
+
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("Notes");
 
-                    b.Property<string>("Type");
+                    b.Property<int>("OrderNo");
+
+                    b.Property<string>("PickupText");
+
+                    b.Property<string>("Type")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
@@ -51,15 +61,21 @@ namespace RoR2LogbookMVC.Migrations
 
                     b.Property<float>("BaseMaxHealth");
 
+                    b.Property<string>("Challenge");
+
                     b.Property<float>("DamageIncrease");
 
-                    b.Property<string>("Icon");
+                    b.Property<string>("Icon")
+                        .IsRequired();
 
                     b.Property<float>("MaxHealthIncrease");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("Notes");
+
+                    b.Property<int>("OrderNo");
 
                     b.Property<float>("Speed");
 

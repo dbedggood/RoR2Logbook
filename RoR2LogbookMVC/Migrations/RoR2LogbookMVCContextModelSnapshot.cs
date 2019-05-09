@@ -73,6 +73,8 @@ namespace RoR2LogbookMVC.Migrations
 
                     b.Property<string>("Notes");
 
+                    b.Property<int>("OrderNo");
+
                     b.Property<float>("Speed");
 
                     b.HasKey("ID");

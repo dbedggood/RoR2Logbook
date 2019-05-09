@@ -50,9 +50,9 @@ namespace RoR2LogbookMVC
                     options.UseSqlServer(Configuration.GetConnectionString("RoR2LogbookMVCContext")));
 
             // Automatically perform database migration
-            //services.BuildServiceProvider().GetService<RoR2LogbookMVCContext>().Database.Migrate();
+            services.BuildServiceProvider().GetService<RoR2LogbookMVCContext>().Database.Migrate();
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
