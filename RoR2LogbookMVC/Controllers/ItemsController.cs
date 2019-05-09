@@ -25,6 +25,8 @@ namespace RoR2LogbookMVC.Controllers
             var items = from i in _context.Item
                          select i;
 
+            items = items.OrderBy(s => s.OrderNo);
+
             ViewData["CurrentFilter"] = search;
 
             if (sort == "nameDescending")
