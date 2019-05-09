@@ -27,7 +27,9 @@ namespace RoR2LogbookMVC.Models
                         Icon = "../../images/tier1/Syringe.png",
                         Name = "Soldier's Syringe",
                         Description = "Increases attack speed by 15% (+15% per stack).",
-                        Type = "tier1"
+                        Type = "tier1",
+                        PickupText = "Increases attack speed.",
+                        OrderNo = 1
                     }
                 );
 
@@ -41,6 +43,7 @@ namespace RoR2LogbookMVC.Models
                         BaseDamage = 12f,
                         DamageIncrease = 2.4f,
                         Speed = 7f,
+                        OrderNo = 1
                     }
 
                 );
