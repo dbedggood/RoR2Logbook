@@ -20,9 +20,31 @@ namespace RoR2LogbookMVC.Controllers
         }
 
         // GET: Survivors
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sort)
         {
-            return View(await _context.Survivor.ToListAsync());
+            var survivors = from i in _context.Survivor
+                        select i;
+
+            survivors = survivors.OrderBy(s => s.OrderNo);
+
+            if (sort == "nameDescending")
+            {
+                survivors = survivors.OrderByDescending(s => s.Name);
+            }
+            else if (sort == "nameAscending")
+            {
+                survivors = survivors.OrderBy(s => s.Name);
+            }
+            else if (sort == "orderDescending")
+            {
+                survivors = survivors.OrderByDescending(s => s.OrderNo);
+            }
+            else if (sort == "orderAscending")
+            {
+                survivors = survivors.OrderBy(s => s.OrderNo);
+            }
+
+            return View(await survivors.ToListAsync());
         }
 
         // GET: Survivors/Details/5
