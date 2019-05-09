@@ -35,6 +35,14 @@ namespace RoR2LogbookMVC.Controllers
             {
                 items = items.OrderBy(s => s.Name);
             }
+            else if (sort == "orderDescending")
+            {
+                items = items.OrderByDescending(s => s.OrderNo);
+            }
+            else if (sort == "orderAscending")
+            {
+                items = items.OrderBy(s => s.OrderNo);
+            }
 
             if (!String.IsNullOrEmpty(search))
             {
