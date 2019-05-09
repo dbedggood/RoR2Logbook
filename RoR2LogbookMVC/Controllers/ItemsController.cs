@@ -25,6 +25,8 @@ namespace RoR2LogbookMVC.Controllers
             var items = from i in _context.Item
                          select i;
 
+            items = items.OrderBy(s => s.OrderNo);
+
             ViewData["CurrentFilter"] = search;
 
             if (sort == "nameDescending")
@@ -34,6 +36,14 @@ namespace RoR2LogbookMVC.Controllers
             else if (sort == "nameAscending")
             {
                 items = items.OrderBy(s => s.Name);
+            }
+            else if (sort == "orderDescending")
+            {
+                items = items.OrderByDescending(s => s.OrderNo);
+            }
+            else if (sort == "orderAscending")
+            {
+                items = items.OrderBy(s => s.OrderNo);
             }
 
             if (!String.IsNullOrEmpty(search))
@@ -73,7 +83,7 @@ namespace RoR2LogbookMVC.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Icon,Name,Type,PickupText,Description,Challenge,Notes")] Item item)
+        public async Task<IActionResult> Create([Bind("ID,Icon,Name,OrderNo,Type,PickupText,Description,Challenge,Notes")] Item item)
         {
             if (ModelState.IsValid)
             {
@@ -104,7 +114,7 @@ namespace RoR2LogbookMVC.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Icon,Name,Type,PickupText,Description,Challenge,Notes")] Item item)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Icon,Name,OrderNo,Type,PickupText,Description,Challenge,Notes")] Item item)
         {
             if (id != item.ID)
             {

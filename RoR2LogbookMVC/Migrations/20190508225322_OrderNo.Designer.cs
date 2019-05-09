@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RoR2LogbookMVC.Models;
 
 namespace RoR2LogbookMVC.Migrations
 {
     [DbContext(typeof(RoR2LogbookMVCContext))]
-    partial class RoR2LogbookMVCContextModelSnapshot : ModelSnapshot
+    [Migration("20190508225322_OrderNo")]
+    partial class OrderNo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

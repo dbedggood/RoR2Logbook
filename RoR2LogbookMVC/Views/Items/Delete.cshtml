@@ -32,6 +32,12 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderNo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderNo)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Type)
         </dt>
         <dd class="col-sm-10">
@@ -70,12 +76,13 @@
         else
         {
             <dd class="col-sm-10">
-                <div style="white-space: pre-wrap; color: grey;">Welcome to DataScraper (v3.1.53   beta branch)
-$  Scraping memory... error...
-$  Resolving... error...
-$  Combing for relevant data...
-Error!
-Outputting error log...
+                <div style="white-space: pre-wrap; color: grey;">
+                    Welcome to DataScraper (v3.1.53   beta branch)
+                    $  Scraping memory... error...
+                    $  Resolving... error...
+                    $  Combing for relevant data...
+                    Error!
+                    Outputting error log...
                 </div>
             </dd>
         }
